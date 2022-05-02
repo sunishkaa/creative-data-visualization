@@ -1,0 +1,83 @@
+---
+title: "creative-data-visualization"
+author: "Sunishka"
+date: "5/1/2022"
+output: html_document
+---
+
+I recently performed an experiments on Xiphophorus nigrensis (swordtail fish) males. This species has large (courting) and small (sneaking/coercive) males. In my experiment, I put n= 24 individuals (14 large males and 10 small males) through two assays
+1.an open field test, where I tested their performance in an open, novel environment. fish who spend more time moving and more time in the center are considered bolder, and fish that don't move much (and perhaps freeze), and spend most of their time near the walls of the tank (i.e. in the "thigmotaxis" zone) are considered more anxious
+2. a scototaxis assay where a tank was divided into a black zone and a white zone. Along with greater movement, more time spent in the white zone indicates more boldness and more time in the black zone indicates anxiety.
+
+I wanted to see whether an individual fish consistently shows boldness or anxiety using all the metrics obtained from these assays. 
+
+First, I will call in the dataset and make plots of all the behaviors I am interested in comparing over the entire dataset.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+d = read_csv("male_stress_response.csv") %>%
+  select(-c(of_dist_moved_cm, of_velocity_cmps, st_dist_moved_cm,st_velocity_cmps,
+            st_black_thigmo, st_black_center, st_black_total))%>% 
+  gather(key = "behavior", value = "value", 
+         -fish_id, -male_type, -SL) %>% 
+  mutate(name = case_when(behavior == "st_white_total" ~ fish_id))
+d_large = d %>% 
+  filter(male_type == "L")
+d_small = d %>% 
+  filter(male_type == "S")
+
+#for all the males:
+ggplot(d, aes(x = behavior, y = value, col = male_type))+
+  geom_point()+
+  geom_line(aes(group = fish_id))
+#only large males:
+ggplot(d_large, aes(x = behavior, y = value, col = fish_id))+
+  geom_point()+
+  geom_line(aes(group = fish_id))+
+  geom_label_repel(aes(label = name), nudge_x = 1)
+#only small males:
+ggplot(d_small, aes(x = behavior, y = value, col = fish_id))+
+  geom_point()+
+  geom_line(aes(group = fish_id))+
+  geom_label_repel(aes(label = name), nudge_x = 1)
+
+```
+
+Now, with each of these individuals, I have many other things to compare, such as cognitive flexibility and mating vigor. So it will be interesting to see how each individual male performs on this graph.
+
+```{r}
+d_num = d %>% mutate(behavior_num = case_when(
+  behavior == "of_time_in_thigmo_s" ~ 1,
+  behavior == "of_time_in_center_s" ~ 2,
+  behavior == "st_white_thigmo" ~ 3,
+  behavior == "st_white_center" ~ 4,
+  behavior == "st_white_total" ~ 5),
+  name = case_when(
+    behavior_num == 5 ~ fish_id
+  )
+)
+
+thename = "fondue"
+
+library(gganimate)
+library(gifski)
+library(png)
+p1 = ggplot(d_num %>% filter(fish_id == thename), aes(x = behavior_num, y = value))+
+  geom_point()+
+  geom_line()+
+  geom_label_repel(aes(label = fish_id), nudge_x = 1) +
+  transition_reveal(behavior_num)
+anim_save("trial2.gif", animation = last_animation(), renderer=gifski_renderer())
+library(ggrepel)
+p2 = ggplot(d_num %>% filter(male_type == "L"), aes(x = behavior_num, y = value, col = fish_id))+
+  geom_line(aes(group = fish_id))+
+  geom_label_repel(aes(label = fish_id), nudge_x = 1)+ 
+  transition_reveal(behavior_num)
+
+ggplot(, aes(x = behavior, y = value, col = fish_id))+
+  geom_point()+
+  geom_line(aes(group = fish_id))+
+  geom_label_repel(aes(label = name), nudge_x = 1)
+
+```
