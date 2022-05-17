@@ -1,0 +1,511 @@
+country,years,no_cars
+Venezuela,2016,3
+Venezuela,2015,18
+Venezuela,2014,20
+Finland,2014,46
+Finland,2016,48
+Netherlands,2012,66
+Netherlands,2013,68
+Romania,2001,69
+Romania,2000,72
+Austria,2009,72
+Venezuela,2013,72
+Netherlands,2009,77
+Finland,2015,80
+Austria,2016,92
+Finland,2017,92
+Netherlands,2010,94
+Netherlands,2014,95
+Austria,2017,99
+Venezuela,2011,102
+Venezuela,2010,104
+Venezuela,2012,104
+Austria,2010,105
+Netherlands,2011,110
+Venezuela,2009,112
+Finland,2018,112
+Austria,2015,121
+Portugal,2009,126
+Netherlands,2008,132
+Netherlands,2015,133
+Venezuela,2008,135
+Netherlands,2007,139
+Austria,2003,140
+Austria,2000,141
+Austria,2012,143
+Portugal,2016,143
+Austria,2002,151
+Austria,2008,151
+Austria,2014,151
+Sweden,2009,152
+Austria,2011,153
+Portugal,2013,154
+Austria,2001,155
+Venezuela,2005,155
+Australia,2016,156
+Portugal,2015,157
+Argentina,2002,159
+Netherlands,2006,159
+Portugal,2010,159
+Portugal,2014,162
+Portugal,2012,164
+Austria,2018,164
+Netherlands,2016,165
+Austria,2013,167
+Australia,2015,168
+Argentina,2003,170
+Venezuela,2006,172
+Venezuela,2007,172
+Portugal,2008,175
+Australia,2014,175
+Portugal,2007,176
+Portugal,2017,176
+Netherlands,2005,181
+Taiwan,2008,183
+Sweden,2014,188
+Portugal,2011,192
+Sweden,2013,199
+Sweden,2012,200
+Sweden,2010,208
+Australia,2013,211
+Slovakia,2005,218
+Netherlands,2003,219
+Australia,2011,219
+Portugal,2005,221
+Australia,2012,221
+Australia,2009,223
+Taiwan,2009,226
+Portugal,2004,227
+Portugal,2006,227
+Austria,2007,228
+Sweden,2015,230
+Netherlands,2002,231
+Sweden,2011,232
+Argentina,2001,236
+Netherlands,2001,239
+Portugal,2003,239
+Australia,2010,239
+Portugal,2001,240
+Portugal,2000,247
+Netherlands,2004,248
+Austria,2004,249
+Portugal,2002,251
+Netherlands,2017,251
+Austria,2005,253
+Sweden,2016,254
+Argentina,2004,260
+Netherlands,2000,267
+Turkey,2001,271
+Taiwan,2001,272
+Austria,2006,275
+Sweden,2002,276
+Sweden,2017,276
+Taiwan,2007,283
+Sweden,2001,286
+Portugal,2018,294
+Malaysia,2000,295
+Slovakia,2006,295
+Sweden,2000,296
+Sweden,2008,299
+Poland,2003,300
+Taiwan,2006,303
+Netherlands,2018,303
+Belgium,2018,309
+Poland,2002,310
+Australia,2001,319
+Argentina,2005,320
+Sweden,2003,323
+Sweden,2005,324
+Australia,2008,324
+Sweden,2006,327
+Australia,2006,328
+Australia,2007,332
+Taiwan,2002,337
+Sweden,2004,339
+Argentina,2000,340
+Sweden,2018,340
+Australia,2002,344
+Turkey,2002,347
+Australia,2000,348
+Malaysia,2001,359
+Sweden,2007,361
+Taiwan,2000,365
+South Africa,2009,374
+Belgium,2017,378
+Poland,2001,387
+Taiwan,2003,387
+Australia,2005,389
+Belgium,2016,399
+Australia,2004,405
+Belgium,2015,409
+Australia,2003,413
+Turkey,2000,431
+Taiwan,2004,431
+Argentina,2006,432
+Czech Republicb,2003,442
+Taiwan,2005,446
+Czech Republicb,2002,447
+Czech Republicb,2004,448
+Czech Republicb,2000,455
+Slovakia,2009,463
+Czech Republicb,2001,465
+South Africa,2010,472
+Argentina,2018,491
+Argentina,2016,493
+Argentina,2017,496
+Argentina,2009,513
+Belgium,2013,514
+South Africa,2005,516
+Belgium,2014,516
+South Africa,2011,533
+Turkey,2003,534
+South Africa,2007,534
+Belgium,2009,537
+South Africa,2012,539
+Belgium,2012,540
+Argentina,2015,543
+Argentina,2007,545
+South Africa,2013,546
+Belgium,2010,555
+Poland,2000,556
+South Africa,2008,563
+Slovakia,2010,563
+South Africa,2014,566
+Slovakia,2007,571
+Slovakia,2008,576
+South Africa,2016,578
+South Africa,2017,581
+Slovakia,2011,586
+South Africa,2006,588
+Poland,2013,588
+Poland,2014,589
+Poland,2004,592
+South Africa,2015,592
+South Africa,2018,595
+Argentina,2008,597
+Belgium,2011,601
+Czech Republicb,2005,605
+Poland,2005,612
+Argentina,2014,617
+Poland,2012,645
+Poland,2015,656
+Italy,2013,658
+Italy,2012,672
+Poland,2016,676
+Poland,2017,685
+Italy,2014,698
+Poland,2006,716
+Russia,2009,722
+Argentina,2010,724
+Belgium,2008,725
+Argentina,2012,764
+Italy,2011,790
+Argentina,2013,791
+India,2000,796
+Turkey,2004,823
+India,2001,825
+Argentina,2011,829
+Belgium,2007,834
+Poland,2011,835
+Italy,2010,836
+Italy,2009,843
+Slovakia,2012,844
+Czech Republicb,2006,855
+Turkey,2009,870
+Poland,2007,875
+Turkey,2005,879
+India,2002,892
+Belgium,2004,895
+Poland,2010,895
+Slovakia,2014,902
+Belgium,2003,904
+Slovakia,2013,906
+Poland,2009,907
+Belgium,2006,918
+Belgium,2005,927
+Czech Republicb,2007,939
+Czech Republicb,2008,946
+Slovakia,2015,957
+Slovakia,2016,973
+Slovakia,2017,974
+Czech Republicb,2009,975
+Turkey,2006,988
+Poland,2008,1006
+Italy,2015,1014
+Italy,2008,1024
+Belgium,2000,1033
+Italy,2005,1038
+Belgium,2002,1056
+Turkey,2012,1073
+Czech Republicb,2010,1076
+United Kingdom,2009,1090
+Slovakia,2018,1093
+Turkey,2010,1095
+Turkey,2007,1099
+Italy,2016,1103
+Turkey,2013,1126
+Czech Republicb,2013,1133
+Italy,2004,1142
+Italy,2017,1142
+Turkey,2008,1147
+India,2003,1161
+Turkey,2014,1170
+Czech Republicb,2012,1179
+Belgium,2001,1187
+Turkey,2011,1189
+Czech Republicb,2011,1200
+Russia,2000,1203
+Italy,2006,1212
+Russia,2002,1220
+Russia,2001,1250
+Czech Republicb,2014,1251
+Russia,2003,1280
+Italy,2007,1284
+Czech Republicb,2015,1304
+Russia,2016,1304
+Italy,2003,1322
+Czech Republicb,2016,1350
+Russia,2005,1353
+Turkey,2015,1359
+Russia,2015,1379
+Russia,2004,1385
+United Kingdom,2010,1393
+Russia,2010,1404
+Czech Republicb,2017,1420
+Italy,2002,1427
+Czech Republicb,2018,1443
+United Kingdom,2011,1464
+Turkey,2016,1486
+Canada,2009,1490
+Russia,2006,1507
+India,2004,1511
+Turkey,2018,1550
+Russia,2017,1551
+Mexico,2004,1553
+Mexico,2009,1561
+Mexico,2003,1575
+United Kingdom,2012,1576
+Italy,2001,1580
+United Kingdom,2013,1597
+United Kingdom,2014,1599
+United Kingdom,2018,1604
+India,2005,1642
+United Kingdom,2008,1649
+United Kingdom,2006,1650
+Brazil,2000,1671
+Russia,2007,1672
+Turkey,2017,1674
+United Kingdom,2015,1682
+Mexico,2005,1684
+United Kingdom,2001,1685
+Italy,2000,1738
+United Kingdom,2017,1749
+United Kingdom,2007,1750
+Russia,2018,1764
+France,2013,1781
+Brazil,2002,1793
+Russia,2008,1794
+Brazil,2001,1798
+United Kingdom,2005,1803
+Mexico,2002,1805
+United Kingdom,2000,1817
+United Kingdom,2016,1817
+United Kingdom,2002,1821
+Brazil,2003,1827
+United Kingdom,2003,1846
+France,2014,1851
+United Kingdom,2004,1856
+Mexico,2001,1857
+Russia,2014,1887
+Mexico,2000,1923
+India,2006,1958
+Spain,2012,1979
+Russia,2011,1989
+China,2000,2009
+France,2012,2011
+France,2015,2015
+Canada,2018,2026
+France,2009,2043
+Mexico,2006,2046
+Canada,2010,2068
+Canada,2008,2082
+Mexico,2007,2095
+France,2016,2133
+Canada,2011,2135
+Spain,2013,2163
+Spain,2009,2164
+Mexico,2008,2168
+Brazil,2016,2175
+Russia,2013,2176
+Canada,2017,2194
+Brazil,2004,2210
+France,2010,2219
+Russia,2012,2232
+India,2007,2250
+France,2011,2278
+France,2017,2279
+Canada,2015,2283
+India,2008,2316
+France,2018,2329
+China,2001,2332
+Mexico,2010,2342
+Spain,2011,2354
+Canada,2016,2371
+Canada,2013,2380
+Spain,2010,2388
+Canada,2014,2394
+Spain,2014,2403
+Brazil,2015,2454
+Canada,2012,2463
+Brazil,2005,2528
+Canada,2001,2532
+Spain,2008,2542
+Canada,2003,2553
+France,2008,2568
+Canada,2006,2571
+Canada,2007,2579
+Brazil,2006,2611
+Canada,2002,2629
+India,2009,2643
+Mexico,2011,2681
+Canada,2005,2688
+Canada,2004,2712
+Spain,2015,2733
+Brazil,2017,2749
+Spain,2005,2753
+Spain,2006,2777
+Spain,2018,2820
+Spain,2017,2848
+Spain,2001,2850
+Spain,2002,2855
+Spain,2016,2886
+Spain,2007,2890
+Brazil,2018,2894
+South Korea,2001,2946
+Canada,2000,2962
+Brazil,2007,2971
+Mexico,2012,3002
+Spain,2004,3012
+France,2007,3016
+Spain,2003,3030
+Spain,2000,3033
+Mexico,2013,3051
+South Korea,2000,3115
+Brazil,2011,3144
+South Korea,2002,3148
+Brazil,2014,3170
+France,2006,3174
+South Korea,2003,3178
+Brazil,2009,3185
+Brazil,2008,3220
+China,2002,3251
+France,2000,3352
+France,2004,3352
+Mexico,2014,3368
+Brazil,2012,3371
+South Korea,2004,3469
+South Korea,2009,3513
+France,2005,3549
+India,2010,3554
+Mexico,2015,3565
+Mexico,2016,3600
+France,2003,3620
+France,2001,3628
+Brazil,2010,3648
+France,2002,3693
+South Korea,2005,3699
+Brazil,2013,3768
+South Korea,2008,3827
+South Korea,2006,3840
+India,2014,3865
+India,2013,3896
+India,2011,3940
+South Korea,2018,4029
+Mexico,2017,4070
+South Korea,2007,4086
+Mexico,2018,4101
+South Korea,2017,4115
+India,2012,4149
+India,2015,4150
+South Korea,2016,4229
+South Korea,2010,4272
+China,2003,4444
+India,2016,4489
+South Korea,2013,4522
+South Korea,2014,4525
+South Korea,2015,4556
+South Korea,2012,4558
+South Korea,2011,4657
+India,2017,4783
+China,2004,5071
+Germany,2002,5145
+India,2018,5175
+Germany,2000,5198
+Germany,2009,5210
+Germany,2003,5507
+Germany,2018,5554
+Germany,2004,5570
+China,2005,5668
+Germany,2001,5692
+United States,2009,5709
+Germany,2005,5758
+Germany,2012,5797
+Germany,2006,5820
+Germany,2013,5877
+Germany,2010,5906
+Germany,2008,6046
+Germany,2014,6051
+Germany,2017,6070
+Germany,2015,6186
+Germany,2016,6211
+Germany,2007,6213
+Germany,2011,6311
+China,2006,7566
+United States,2010,7743
+Japan,2009,7935
+Japan,2011,8399
+United States,2011,8655
+United States,2008,8672
+China,2007,8885
+Japan,2016,9204
+China,2008,9233
+Japan,2015,9278
+Japan,2010,9626
+Japan,2013,9630
+Japan,2017,9690
+Japan,2018,9729
+Japan,2014,9775
+Japan,2001,9777
+Japan,2012,9943
+Japan,2000,10145
+Japan,2002,10258
+Japan,2003,10286
+United States,2012,10333
+Japan,2004,10512
+United States,2007,10752
+Japan,2005,10800
+United States,2013,11066
+United States,2017,11190
+United States,2006,11260
+United States,2001,11425
+Japan,2006,11484
+Japan,2008,11564
+Japan,2007,11596
+United States,2014,11661
+United States,2005,11947
+United States,2004,11960
+United States,2003,12087
+United States,2015,12105
+United States,2016,12178
+United States,2002,12280
+United States,2000,12774
+China,2009,13649
+China,2010,18265
+China,2011,18419
+China,2012,19272
+China,2013,22117
+China,2014,23723
+China,2015,24503
+China,2018,27809
+China,2016,28119
+China,2017,29016

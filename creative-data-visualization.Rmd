@@ -1,83 +1,79 @@
 ---
 title: "creative-data-visualization"
 author: "Sunishka"
-date: "5/1/2022"
+date: "5/17/2022"
 output: html_document
 ---
+For this project I chose to create time series barplots showing the top 10 countries in terms of (1) CO2 production by transport, and (2) number of road vehicles. The dataset for (1) was obtained from https://ourworldindata.org/transport (see "co2-emissions-transport.csv") and the dataset for (2) was from https://www.bts.gov/content/world-motor-vehicle-production-selected-countries (see "table_01_23_072021.xlsx" for raw data. I put what I needed into the csv file "vehicles3.csv")
 
-I recently performed an experiments on Xiphophorus nigrensis (swordtail fish) males. This species has large (courting) and small (sneaking/coercive) males. In my experiment, I put n= 24 individuals (14 large males and 10 small males) through two assays
-1.an open field test, where I tested their performance in an open, novel environment. fish who spend more time moving and more time in the center are considered bolder, and fish that don't move much (and perhaps freeze), and spend most of their time near the walls of the tank (i.e. in the "thigmotaxis" zone) are considered more anxious
-2. a scototaxis assay where a tank was divided into a black zone and a white zone. Along with greater movement, more time spent in the white zone indicates more boldness and more time in the black zone indicates anxiety.
+Calling in packages and loading in CO2 dataset. Then I ranked all the countries by most CO2 produced per year, and then arranged the dataset to only include top ten ranking countries for each year.
 
-I wanted to see whether an individual fish consistently shows boldness or anxiety using all the metrics obtained from these assays. 
-
-First, I will call in the dataset and make plots of all the behaviors I am interested in comparing over the entire dataset.
-
-```{r}
+```{r, message=FALSE}
 library(tidyverse)
-library(ggplot2)
-d = read_csv("male_stress_response.csv") %>%
-  select(-c(of_dist_moved_cm, of_velocity_cmps, st_dist_moved_cm,st_velocity_cmps,
-            st_black_thigmo, st_black_center, st_black_total))%>% 
-  gather(key = "behavior", value = "value", 
-         -fish_id, -male_type, -SL) %>% 
-  mutate(name = case_when(behavior == "st_white_total" ~ fish_id))
-d_large = d %>% 
-  filter(male_type == "L")
-d_small = d %>% 
-  filter(male_type == "S")
-
-#for all the males:
-ggplot(d, aes(x = behavior, y = value, col = male_type))+
-  geom_point()+
-  geom_line(aes(group = fish_id))
-#only large males:
-ggplot(d_large, aes(x = behavior, y = value, col = fish_id))+
-  geom_point()+
-  geom_line(aes(group = fish_id))+
-  geom_label_repel(aes(label = name), nudge_x = 1)
-#only small males:
-ggplot(d_small, aes(x = behavior, y = value, col = fish_id))+
-  geom_point()+
-  geom_line(aes(group = fish_id))+
-  geom_label_repel(aes(label = name), nudge_x = 1)
-
+library(gganimate)
+co2 = read_csv("co2-emissions-transport.csv") %>%
+  drop_na(Transport) %>%
+  group_by(Year) %>%
+  arrange(Year, -Transport) %>%
+  mutate(rank = 1:n()) %>%
+  filter(rank <= 10)
 ```
 
-Now, with each of these individuals, I have many other things to compare, such as cognitive flexibility and mating vigor. So it will be interesting to see how each individual male performs on this graph.
+First, I will make a plot showing the top 10 countries in terms of CO2 produced by transport, for each year.
 
 ```{r}
-d_num = d %>% mutate(behavior_num = case_when(
-  behavior == "of_time_in_thigmo_s" ~ 1,
-  behavior == "of_time_in_center_s" ~ 2,
-  behavior == "st_white_thigmo" ~ 3,
-  behavior == "st_white_center" ~ 4,
-  behavior == "st_white_total" ~ 5),
-  name = case_when(
-    behavior_num == 5 ~ fish_id
-  )
-)
+plots_per_year = ggplot(co2, aes(xmin = -10, xmax = Transport,
+                                 ymin = rank - 0.5, ymax = rank + 0.5,
+                                 y= rank,
+                                 fill = Entity))+
+  facet_wrap(~ Year) +
+  geom_rect()+
+  geom_text(x = 0.5e+09, aes(label=Entity), hjust = 0, size = 3)+
+  geom_text(x = 1.5e+09, aes(y = 10, label = as.character(Year)))+
+  scale_y_reverse()+
+  scale_fill_viridis_d()+
+  theme_classic()
+plots_per_year
+```
 
-thename = "fondue"
+You can use the following code to make the animation
 
-library(gganimate)
-library(gifski)
-library(png)
-p1 = ggplot(d_num %>% filter(fish_id == thename), aes(x = behavior_num, y = value))+
-  geom_point()+
-  geom_line()+
-  geom_label_repel(aes(label = fish_id), nudge_x = 1) +
-  transition_reveal(behavior_num)
-anim_save("trial2.gif", animation = last_animation(), renderer=gifski_renderer())
-library(ggrepel)
-p2 = ggplot(d_num %>% filter(male_type == "L"), aes(x = behavior_num, y = value, col = fish_id))+
-  geom_line(aes(group = fish_id))+
-  geom_label_repel(aes(label = fish_id), nudge_x = 1)+ 
-  transition_reveal(behavior_num)
-
-ggplot(, aes(x = behavior, y = value, col = fish_id))+
-  geom_point()+
-  geom_line(aes(group = fish_id))+
-  geom_label_repel(aes(label = name), nudge_x = 1)
+```{r, eval=FALSE}
+plots_per_year + facet_null() +
+  transition_time(Year)
+anim_save("CO2 from transportation by country.gif", animation = last_animation())
 
 ```
+
+![](gifs/CO2 from transportation by country.gif)
+
+Now, doing all the same steps as above for vehicles produced per year, by top ten countries. 
+```{r, message=FALSE}
+vehicles = read_csv("vehicles3.csv") %>%
+  group_by(years) %>%
+  arrange(years, -no_cars) %>%
+  mutate(rank = 1:n()) %>%
+  filter(rank <= 10)
+vehicles_per_year = ggplot(vehicles, aes(xmin = -10, xmax = no_cars,
+                                  ymin = rank - 0.5, ymax = rank + 0.5,
+                                  y= rank,
+                                  fill = country))+
+  facet_wrap(~ years) +
+  geom_rect()+
+  geom_text(x = 15000, aes(label=country), hjust = 0, size = 3)+
+  geom_text(x = 25000, aes(y = 10, label = as.character(years)))+
+  scale_y_reverse()+
+  scale_fill_viridis_d()+
+  theme_classic()
+vehicles_per_year
+```
+
+```{r, eval = FALSE}
+vehicles_per_year + facet_null() +
+  transition_time(years)
+anim_save("vehicles per year.gif", animation = last_animation())
+```
+
+![](gifs/vehicles per year.gif)
+
+So it was interesting to see how the US still has most CO2 production by transport even though China takes over and produces more vehicles in recent years. The website said that CO2 from transport includes rail and domestic air as well, the latter I think could be a huge contributor. It was also interesting to see how the ranking changes over time for certain countries. India is not even in the rankings for vehicles produced in the beggining but jumps to 4th place by 2018. While the top 5 did not change much for CO2 produced, the top 10 rankings changed often.
